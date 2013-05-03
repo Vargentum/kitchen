@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Kitchen project</title>
+  <link rel="apple-touch-icon" href="../images/apple-icons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icons/apple-touch-icon-57x57-precomposed.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icons/apple-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileImage" content="../images/apple-icons/apple-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <!-- Modernizr -->
+  <script src="../js/libs/modernizr-2.6.2.min.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="../js/libs/jquery-1.8.2.min.js"></script>
+  <!-- framework css -->
+  <link type="text/css" rel="stylesheet" href="../css/groundwork.css"><!--[if IE]>
+  <link type="text/css" rel="stylesheet" href="../css/groundwork-ie.css"><![endif]--><!--[if lt IE 9]>
+  <script type="text/javascript" src="../js/libs/html5shiv.min.js"></script><![endif]--><!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" href="../css/font-awesome-ie7.min.css"><![endif]-->
+  <script type="text/javascript">
+    // extend Modernizr to have datauri test
+    (function(){
+      var datauri = new Image();
+      datauri.onerror = function() {
+        Modernizr.addTest('datauri', function () { return false; });
+      };
+      datauri.onload = function() {
+        Modernizr.addTest('datauri', function () { return (datauri.width == 1 && datauri.height == 1); });
+        Modernizr.load({
+          test: Modernizr.datauri,
+          nope: '../css/no-datauri.css'
+        });
+      };
+      datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    })();
+    // fallback if SVG unsupported
+    Modernizr.load({
+      test: Modernizr.inlinesvg,
+      nope: [
+        '../css/no-svg.css'
+      ]
+    });
+    // polyfill for HTML5 placeholders
+    Modernizr.load({
+      test: Modernizr.input.placeholder,
+      nope: [
+        '../css/placeholder_polyfill.css',
+        '../js/libs/placeholder_polyfill.jquery.js'
+      ]
+    });
+
+  </script>
+</head>
+<body itemscope itemtype="http://schema.org/LocalBusiness">
+<div class="b-page b-stickyFooter_helper-1">
+  <!--Header-->
+  <header class="b-header">
+    <div class="b-header__left mobile">
+      <!--logo-->
+      <a class="b-logo" href="/" itemprop='url'>
+        <img src="../images/logo.png" alt="Korpusoff - мебель на заказ" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+        <span class="b-logo__content" itemprop="name">Korpusoff</span>
+        <span class="b-logo__content" itemprop="description">Мебель на заказ</span>
+      </a>
+    </div>
+    <div class="b-header__right mobile">
+      <div class="b-header__right__top">
+        <!--consult-->
+        <div class="b-header__consult mobile">
+          <img src="http://fakeimg.pl/50x50/?text=Icon" alt="" class="b-header__consult__icon"/>
+          <span>Вы можете вызвать<br> консультанта для замера</span>
+        </div>
+        <!--phone-->
+        <address class="b-header__phone mobile">
+          <span class="b-header__phone__main" itemprop='telephone'>8-800-200-00-00</span>
+          <a href="#">обратный звонок</a>
+        </address>
+      </div>
+      <div class="b-header__right__bottom">
+        <!--main nav-->
+        <ul class="b-mainNav eight ninths skip-one">
+          <!--don't close li tags-->
+          <li class="b-mainNav__unit">
+            <a href="#">Кухни</a><!--don't close li tags-->
+            <div class="b-mainNav__unit__expanded">
+              <h2 class="b-mainNav__unit__expanded__title">Кухни</h2>
+              <ul class="b-mainNav__unit__expanded__content">
+                <li><a href="#">Каталог идей</a></li>
+                <li><a href="#">Наши работы</a></li>
+                <li><a href="#">Полезная информация</a></li>
+                <li><a href="#">Вопросы и ответы</a></li>
+                <li><a href="#">Калькулятор онлайн</a></li>
+              </ul>
+            </div><!--end expanded block-->
+          </li>
+          <li class="b-mainNav__unit">
+            <a href="#">Гостиная</a>
+            <div class="b-mainNav__unit__expanded">
+              <h2 class="b-mainNav__unit__expanded__title">Гостиная</h2>
+              <ul class="b-mainNav__unit__expanded__content">
+                <li><a href="#">Каталог идей</a></li>
+                <li><a href="#">Наши работы</a></li>
+                <li><a href="#">Полезная информация</a></li>
+                <li><a href="#">Вопросы и ответы</a></li>
+                <li><a href="#">Калькулятор онлайн</a></li>
+              </ul>
+            </div><!--end expanded block-->
+          </li>
+          <li class="b-mainNav__unit"><a href="#">Спальня</a></li>
+          <li class="b-mainNav__unit"><a href="#">Детская</a></li>
+          <li class="b-mainNav__unit"><a href="#">Прихожая</a></li>
+          <li class="b-mainNav__unit"><a href="#">Офис</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!--big image-->
+  <figure class="b-page__figure--mainPage">
+    <figcaption class="b-page__figure__promo">
+      <h2 class="b-page__figure__promo__title mobile">Сезон кухонь<br> уже начался</h2>
+      <div class="b-page__figure__promo__discount mobile">
+        <h3 class="b-page__figure__promo__discount__header small-tablet">Специальное<br> предложение</h3>
+        <p class="b-page__figure__promo__discount__main small-tablet">20 % на кухни Вегас</p>
+      </div>
+    </figcaption>
+  </figure>
+
+  <!--index page template-->
+  <div class="b-template container">
+
+    <!--special offers block (3 images)-->
+    <ul class="b-special_offers row">
+      <li class="one thirds small-tablet">
+        <div class="b-special_offers__unit">
+          <h2 class="b-special_offers__unit__label">Специальное<br> предложение</h2>
+          <h3 class="b-special_offers__unit__title">20% на кухни Вегас</h3>
+          <img src="http://fakeimg.pl/270x150/?text=270x150" alt="" class="b-special_offers__photo"/>
+        </div>
+      </li>
+      <li class="one thirds small-tablet">
+        <div class="b-special_offers__unit">
+          <h2 class="b-special_offers__unit__label">Специальное<br> предложение</h2>
+          <h3 class="b-special_offers__unit__title">20% на кухни Вегас</h3>
+          <img src="http://fakeimg.pl/270x150/?text=270x150" alt="" class="b-special_offers__photo"/>
+        </div>
+      </li>
+      <li class="one thirds small-tablet">
+        <div class="b-special_offers__unit">
+          <h2 class="b-special_offers__unit__label">Специальное<br> предложение</h2>
+          <h3 class="b-special_offers__unit__title">20% на кухни Вегас</h3>
+          <img src="http://fakeimg.pl/270x150/?text=270x150" alt="" class="b-special_offers__photo"/>
+        </div>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul class="b-articles_list row">
+      <li class="one thirds small-tablet">
+        <article class="b-articles_list__unit">
+          <h3 class="b-articles_list__unit__title">О компании</h3>
+          <p>Ведь у нас вы можете заказать кухни
+            выполненные в любом из десятков различных стилей от антика любого из более чем 40 000 оттенков;
+            из любого доступного на сегодняшний день материала от дерева и камня до пластика и металла;
+            и с любым типом отделки.</p>
+          <p>Сориентироваться в таком многообразии и помогут вам наши дизайнеры. Они помогут воплотить в жизнь вашу мечту об идеальной кухне таким образом, чтобы вы всегда </p>
+        </article>
+      </li>
+      <li class="one thirds small-tablet">
+        <article class="b-articles_list__unit">
+          <h3 class="b-articles_list__unit__title">О компании</h3>
+          <p>Ведь у нас вы можете заказать кухни
+            выполненные в любом из десятков различных стилей от антика любого из более чем 40 000 оттенков;
+            из любого доступного на сегодняшний день материала от дерева и камня до пластика и металла;
+            и с любым типом отделки.</p>
+          <p>Сориентироваться в таком многообразии и помогут вам наши дизайнеры. Они помогут воплотить в жизнь вашу мечту об идеальной кухне таким образом, чтобы вы всегда </p>
+        </article>
+      </li>
+      <li class="one thirds small-tablet">
+        <article class="b-articles_list__unit">
+          <h3 class="b-articles_list__unit__title">О компании</h3>
+          <p>Ведь у нас вы можете заказать кухни
+            выполненные в любом из десятков различных стилей от антика любого из более чем 40 000 оттенков;
+            из любого доступного на сегодняшний день материала от дерева и камня до пластика и металла;
+            и с любым типом отделки.</p>
+          <p>Сориентироваться в таком многообразии и помогут вам наши дизайнеры. Они помогут воплотить в жизнь вашу мечту об идеальной кухне таким образом, чтобы вы всегда </p>
+        </article>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <!--b-page__footer-->
+    <footer class="b-page__footer">
+      <div class="b-page__footer__unit two twelfth small-tablet">
+        <h2 class="b-page__footer__unit__title">О компании</h2>
+        <ul class="b-page__footer__unit__content">
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="b-page__footer__unit skip-one five twelfth small-tablet">
+        <h2 class="b-page__footer__unit__title">Наши услуги</h2>
+        <ul class="obj-gutter_20 zero" style="list-style-type: none">
+          <li class="one thirds mobile">
+            <ul class="b-page__footer__unit__content">
+              <li><a href="#">x x x x x x x x x x x x x x x x x </a></li>
+              <li><a href="#">Детская</a></li>
+              <li><a href="#">Прихожая</a></li>
+              <li><a href="#">Офис</a></li>
+            </ul>
+          </li>
+          <li class="one thirds mobile">
+            <ul class="b-page__footer__unit__content">
+              <li><a href="#">x x x x x x x x x x x x x x x x x </a></li>
+              <li><a href="#">Детская</a></li>
+              <li><a href="#">Прихожая</a></li>
+              <li><a href="#">Офис</a></li>
+              <li><a href="#">Офис</a></li>
+              <li><a href="#">Офис</a></li>
+            </ul>
+          </li>
+          <li class="one thirds mobile">
+            <ul class="b-page__footer__unit__content">
+              <li><a href="#">x x x x x x x x x x x x x x x x x </a></li>
+              <li><a href="#">Детская</a></li>
+              <li><a href="#">Прихожая</a></li>
+              <li><a href="#">Офис</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="b-page__footer__unit skip-one two twelfth small-tablet">
+        <h2 class="b-page__footer__unit__title">Контакты</h2>
+        <ul class="b-page__footer__unit__content">
+          <li><a href="#">8-800-200-0000</a></li>
+          <li><a href="#">обратный звонок</a></li>
+          <li><a href="#">написать директору</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div><!--end index page template-->
+
+  <div class="b-stickyFooter_helper-2"></div>
+</div>
+<!--Footer-->
+<footer class="b-footer container">
+  <small class="b-copy--owner">Все права защищены</small>
+  <small class="b-copy--creator">Сделано в <a href="#">Veikab</a></small>
+</footer>
+
+<!-- scripts-->
+<!--<script type="text/javascript" src="../js/plugins/jquery.cycle2.js"></script>-->
+<script type="text/javascript" src="../js/groundwork.all.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
+<!-- google analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+$(function(){
+    $('.b-mainNav__unit').each(function(){
+        $(this).hover(
+            function(){
+                $(this).addClass('m-active');
+                $(this).find('.b-mainNav__unit__expanded').delay(400).slideDown('fast');
+            },
+            function(){
+                $(this).removeClass('m-active');
+                $(this).find('.b-mainNav__unit__expanded').stop(true,true).slideUp('fast');
+            }
+        );
+    });
+});

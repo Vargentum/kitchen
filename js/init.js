@@ -11,4 +11,8 @@ $(function(){
             }
         );
     });
+    $('.b-mainNav__mobile_trigger').click(function(){
+        $('.b-mainNav__unit').slideToggle('fast');
+        $(this).toggleClass('m-active');
+    })
 });

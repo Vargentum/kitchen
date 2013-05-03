@@ -35,7 +35,7 @@
     .ipad-only { display:inline-block; }
     .hide-on-ipad { display:none; }
     .desktop-only { display:none; }
-    // helper overrides
+    helper overrides
     .no-padding-ipad { padding:0; }
     .no-margin-ipad { margin:0; }
     .zero-ipad { @include _zero; }
@@ -76,7 +76,7 @@
 }
 
 @mixin small-mobile {
-  @media only screen and (max-width:319px) {
+  @media only screen and (max-width:320px) {
     @content;
   }
 }

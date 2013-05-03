@@ -8,7 +8,6 @@
 // variables & mixins
 @import "variables";
 @import "mixins";
-
 // set the stage
 @import "reset";
 @import "global";
@@ -109,7 +108,7 @@ HELPER CLASSES
 .is-lowercase {
   text-transform: lowercase;
 }
-//Misc
+//Misc                    f
 .pseudo-block{
   content: '';
   display: block;
@@ -150,9 +149,8 @@ HELPER CLASSES
   }
 }
 .small-tablet__paddings{
-  @include small-tablet{
-    padding-left: 10px;
-  }
+  @include small-tablet{padding-left: 10px;}
+  @include ipad{padding-left: 10px;}
 
 }
 hr{
@@ -190,6 +188,9 @@ Template styles
   line-height: 1;
   text-transform: uppercase;
   color:rgb(255,255,255);
+  @include mobile{
+    font-size: 50px;
+  }
 }
 .b-crumbs{
   background-image:-moz-linear-gradient(50% 0% -90deg,rgb(255,255,255) 0%,rgb(245,245,245) 100%);
@@ -207,6 +208,10 @@ Template styles
   @extend .hLine;
   @include inline-block;
   margin:40px 0 30px;
+  @include mobile{
+    margin: 15px 0;
+  }
+  @include small-mobile{margin-top: 50px;}
 }
 .b-crumbs__unit{
   position: relative;
@@ -217,7 +222,14 @@ Template styles
     position: absolute;
     right: -5px;
   }
-  &:last-child:after{display: none;}
+  &:last-child{
+    @include singleLink($font-color);
+    text-decoration: none;
+    &:after{display: none;}
+  }
+  @include mobile{
+    padding: 5px;
+  }
 }
 
 
@@ -257,6 +269,7 @@ Template styles
   @include mobile{
     display: block;
     width: 100%;
+    height: auto;
   }
   //border-left;
   &:before{
@@ -291,10 +304,6 @@ Template styles
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.6);
   @extend %clearfix;
-  @include mobile{
-    display: block;
-    width: 100%;
-  }
   //border-right
   &:before{
     @extend .pseudo-block;
@@ -305,23 +314,30 @@ Template styles
     left: 100%;
     top:0;
   }
+  @include mobile{
+    display: block;
+    width: 100%;
+  }
   @include desktop-lower{
     &:before{width: 15px;}
   }
+  @include ipad{&:before{display: none;}}
   @include small-tablet{
-    &:before,&:after{display: none;}
+    &:before{display: none;}
     padding-right: 10px;
   }
+
+  @include small-mobile{
+    height: auto;
+    overflow: hidden;
+    padding: 15px 0;
+  }
+
 }
 .b-header__right__bottom{
   position: relative;
   height: $headerHeight /2;
   background-color: #fff;
-  @include mobile{
-    display: block;
-    width: 100%;
-    height: auto;
-  }
   //border-right
   &:before{
     @extend .pseudo-block;
@@ -334,8 +350,14 @@ Template styles
   @include desktop-lower{
     &:before{width: 15px;}
   }
+  @include ipad{&:before{display: none;}}
   @include small-tablet{
-    &:before,&:after{display: none;}
+    &:before{display: none;}
+  }
+  @include mobile{
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -343,6 +365,9 @@ Template styles
   display: inline-block;
   text-decoration:none;
   padding-top: 40px;
+  @include mobile{
+    padding: 15px 0;
+  }
 }
 .b-logo__content{@extend .text-hide; position:absolute;}
 .b-header__consult{
@@ -360,6 +385,12 @@ Template styles
     padding-top: 10px;
     margin-left: 13px !important;
   }
+  @include small-mobile{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0 !important;
+  }
 }
 .b-header__consult__icon{
   display: block;
@@ -371,6 +402,9 @@ Template styles
   top:50%;
   margin-top: -27px;
   left:0;
+  @include small-mobile{
+    left: 10px;
+  }
 }
 .b-header__consult__text{}
 .b-header__phone{
@@ -386,6 +420,11 @@ Template styles
   @include small-tablet{
     @extend %three;
   }
+  @include ipad{padding-right: 10px;}
+  @include small-mobile{
+    width: 100%;
+    text-align: center;
+  }
   a{
     @include singleLink(#fff);
     text-decoration: none;
@@ -397,13 +436,15 @@ Template styles
 }
 .b-mainNav{
   position: relative;
-  @include small-tablet{
-    padding-left: 6%;
-  }
+  @extend .skip-one;
+  @extend .eight;
+  @extend .ninths;
+  @include small-tablet{padding-left: 6%;}
+  @include mobile{padding-left: 0;}
 }
 .b-mainNav__unit{
   @include inline-block;
-  padding: 12px 18px;
+  padding: 15px 18px 12px;
   &.m-active>a{
     border-bottom-color: rgb(128,21,0);
     @include singleLink($link-active);
@@ -440,7 +481,8 @@ Template styles
     position: relative;
     display: block;
     text-align: center;
-    padding: 12px 0;
+    padding: 0;
+    display: none;
   }
 }
 .b-mainNav__unit__expanded{
@@ -448,16 +490,43 @@ Template styles
   position: absolute;
   z-index: 1;
   top:100%;
-  left:0;
-  padding: 40px  130px 40px 70px;
+  padding: 40px 0;
   @include data-image('hr-tag.png');
   background-color: $background-color;
   background-repeat: repeat-x;
-  @include mobile{
-    position: relative;
-    text-align: center;
-    padding: 40px;
+  @include large-desktop{
+    width: 1080px;
+    left:-379px;
+    padding-left: 70px;
+    padding-right: 130px;
   }
+  @include ipad{
+    width: 860px;
+    left:-283px;
+    padding-left: 30px;
+    padding-right: 80px;
+  }
+  @include small-tablet{
+    width: 732px;
+    left: -180px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include mobile{
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin:0;
+  }
+  @include small-mobile{
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin:0;
+  }
+
 }
 .b-mainNav__unit__expanded__title{
   @extend .obj-title;
@@ -478,11 +547,39 @@ Template styles
   }
   a{
     display: block;
+    display: block;
     font: bold 16px $font-family-title;
     text-transform: uppercase;
     text-decoration: none;
+    @include mobile{}
   }
 }
+.b-mainNav__mobile_trigger{
+  @include inline-block;
+  padding: 5px 15px;
+  background-color: #fff;
+  color: $link-color;
+  @include border-radius(0 0 5px 5px);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 1;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  top:100%;
+  @include single-transition($duration:.3s);
+  &:before{content: '▼'}
+  &:hover,&:focus{
+    text-decoration: none;
+    padding-top: 10px;
+    color: $link-color;
+  }
+  &.m-active{
+    &:hover,&:focus{padding-top: 0;}
+    &:before{content: '▲'}
+  }
+}
+
 
 
 .b-page__figure{
@@ -494,6 +591,10 @@ Template styles
   background-repeat: no-repeat;
   @extend %zero;
 }
+.b-page__figure__content{
+  @extend %container;
+  @extend .small-tablet__paddings;
+}
 .b-page__figure__promo{
   color: #fff;
   @extend %container;
@@ -502,9 +603,6 @@ Template styles
   text-transform: uppercase;
   font-family: $font-family-title;
   @include mobile{
-    position: absolute;
-    top:auto;
-    bottom: 20px;
     width: 100%;
   }
 }
@@ -515,10 +613,12 @@ Template styles
   @extend %pull-right;
   @extend %clearfix;
   @include mobile{
-    position: absolute;
-    left:0;
-    top:0;
+    line-height: 1;
+    width:100%;
     text-align: center;
+  }
+  @include small-mobile{
+    font-size: 28px;
   }
 }
 .b-page__figure__promo__discount{
@@ -526,6 +626,10 @@ Template styles
   @extend %half;
   @extend %pull-right;
   @extend %clearfix;
+  @include mobile{
+    width:100%;
+    text-align: center;
+  }
 }
 .b-page__figure__promo__discount__header{
   background-color: #0A8282;
@@ -549,6 +653,7 @@ Template styles
   @include small-tablet{&:before{display: none;}}
   @include mobile{
     font-size: 22px;
+    line-height: 1.2;
   }
 //  corner
   &:before{
@@ -574,7 +679,6 @@ Template styles
 
 .b-footer{
   height: $footerHeight;
-  //padding: 0 10px;
   background-color: #E8E7E8;
 //  padding emulation
   &:before,&:after{
@@ -590,6 +694,10 @@ Template styles
     &:before,&:after{width: 15px;}
   }
   @include small-tablet{
+    &:before,&:after{width: 0;}
+    padding:0 10px;
+  }
+  @include ipad{
     &:before,&:after{width: 0;}
     padding:0 10px;
   }
@@ -631,12 +739,11 @@ Template styles
   }
   padding-top: 60px;
   @include mobile{
-    padding-top: 0;
+    padding-top: 15px;
   }
 }
 .b-template--indexPage{
   @extend .b-template;
-
 }
 
 
@@ -687,6 +794,7 @@ Template styles
   list-style-type: none;
   @extend .obj-gutter_20;
   @extend .small-tablet__paddings;
+  padding-top: 30px;
 }
 .b-articles_list__unit{}
 .b-articles_list__unit__title{

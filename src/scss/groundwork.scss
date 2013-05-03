@@ -467,7 +467,7 @@ Template styles
       width: 0;
       border-left: 2px dotted #BFBFBF;
       top:50%;
-      left: -18px;
+      right: -18px;
       margin-top: -6px;
     }
     @include mobile{
@@ -476,7 +476,11 @@ Template styles
     }
   }
   &:first-child{padding-left: 0;}
-  &:first-child>a:before{display: none;}
+  &:last-child>a:before{display: none;}
+  @include small-tablet{
+    padding-right: 13px;
+    padding-left: 13px;
+  }
   @include mobile{
     position: relative;
     display: block;
